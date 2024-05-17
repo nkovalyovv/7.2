@@ -1,0 +1,33 @@
+#include "functions.h"
+#include <iostream>
+
+Node* pushElement(Node* P1, int D, Node*& P2) {
+    Node* newNode = new Node{ D, P1 };
+    P2 = newNode;
+    return newNode;
+}
+
+void printAddresses(Node* P1, Node* P2) {
+    if (P1 == nullptr) {
+        std::cout << "Исходный адрес: NIL" << std::endl;
+    }
+    else {
+        std::cout << "Исходный адрес: " << P1 << std::endl;
+    }
+
+    if (P2 == nullptr) {
+        std::cout << "Адрес новой вершины стека: NIL" << std::endl;
+    }
+    else {
+        std::cout << "Адрес новой вершины стека: " << P2 << std::endl;
+    }
+}
+
+void deleteStack(Node* top) {
+    Node* current = top;
+    while (current != nullptr) {
+        Node* temp = current;
+        current = current->next;
+        delete temp;
+    }
+}
