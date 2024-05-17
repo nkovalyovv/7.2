@@ -1,0 +1,20 @@
+#include "functions.h"
+#include <iostream>
+
+int main() {
+    setlocale(LC_ALL, "rus");
+    Node* P1 = nullptr;
+    Node* P2 = nullptr;
+    int D;
+
+    std::cout << "Введите число D для добавления в стек: ";
+    std::cin >> D;
+
+    P2 = pushElement(P1, D, P2);
+
+    printAddresses(P1, P2);
+
+    deleteStack(P2);
+
+    return 0;
+}
