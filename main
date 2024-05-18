@@ -7,14 +7,16 @@ int main() {
     Node* P2 = nullptr;
     int D;
 
+    random(P1); // Заполнить стек случайными числами
+
     std::cout << "Введите число D для добавления в стек: ";
     std::cin >> D;
 
-    P2 = pushElement(P1, D, P2);
+    P2 = push(P1, D, P2); // Добавить элемент в стек
 
-    printAddresses(P1, P2);
+    printAddr(P1, P2); // Вывести адреса вершин стека
 
-    deleteStack(P2);
+    deleteStack(P2); // Удалить стек
 
     return 0;
 }
