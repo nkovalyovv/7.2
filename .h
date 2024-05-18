@@ -7,9 +7,9 @@ struct Node {
     Node* next;
 };
 
-Node* pushElement(Node* P1, int D, Node*& P2);
-void printAddresses(Node* P1, Node* P2);
+void random(Node*& top);
+Node* push(Node* P1, int D, Node*& P2);
+void printAddr(Node* P1, Node* P2);
 void deleteStack(Node* top);
-
 
 #endif
