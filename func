@@ -1,19 +1,27 @@
 #include "functions.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-Node* pushElement(Node* P1, int D, Node*& P2) {
+void random(Node*& top) {
+    srand(time(0)); // Инициализация генератора случайных чисел
+    int num = rand() % 5 + 5; // Генерируем случайное количество узлов (от 5 до 9)
+
+    for (int i = 0; i < num; ++i) {
+        Node* newNode = new Node{ rand() % 100, top }; // Генерируем случайное число и добавляем в стек
+        top = newNode;
+    }
+}
+
+Node* push(Node* P1, int D, Node*& P2) {
     Node* newNode = new Node{ D, P1 };
     P2 = newNode;
     return newNode;
 }
 
-void printAddresses(Node* P1, Node* P2) {
-    if (P1 == nullptr) {
-        std::cout << "Исходный адрес: NIL" << std::endl;
-    }
-    else {
-        std::cout << "Исходный адрес: " << P1 << std::endl;
-    }
+void printAddr(Node* P1, Node* P2) {
+    
+    std::cout << "Исходный адрес: " << P1 << std::endl;
 
     if (P2 == nullptr) {
         std::cout << "Адрес новой вершины стека: NIL" << std::endl;
